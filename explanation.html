@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Explanation | Blind Spot Insights</title>
+  <link rel="stylesheet" href="css/explanation.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">B</div>
+      <div class="brand-text">
+        <strong>Blind Spot</strong>
+        <small>INSIGHTS</small>
+      </div>
+    </div>
+
+    <div class="sidebar-label">MAIN MENU</div>
+
+    <nav class="nav-menu">
+      <a href="dashboard.html" class="nav-link">
+        <span>▦</span> Dashboard
+      </a>
+
+      <a href="progress.html" class="nav-link">
+        <span>◴</span> Progress Report
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-message">
+        <span>✦</span>
+        <strong>Learn from mistakes!</strong>
+        <p>Every correction brings you closer to understanding.</p>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">
+        ↪ Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <span class="breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          / <a href="learning.html">Subject Learning</a>
+          / Explanation
+        </span>
+        <h2>Answer Explanations</h2>
+      </div>
+
+      <div class="user-profile">
+        <div class="avatar" id="userAvatar">S</div>
+        <div class="user-details">
+          <strong id="headerName">Student</strong>
+          <small>Student Account</small>
+        </div>
+      </div>
+    </header>
+
+    <!-- PURPLE BANNER -->
+    <section class="explanation-banner">
+      <div class="banner-content">
+        <span class="banner-tag">
+          LEARN · ANALYSE · IMPROVE
+        </span>
+
+        <h1>Understand Your Mistakes</h1>
+
+        <p>
+          Review your incorrect answers, learn the correct
+          concepts and strengthen your understanding.
+        </p>
+      </div>
+
+      <div class="banner-art" aria-hidden="true">
+        <div class="art-ring"></div>
+        <span class="art-book">📖</span>
+        <span class="art-star">✦</span>
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section class="summary-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-tag">QUIZ REVIEW</span>
+          <h2>Your Mistake Analysis</h2>
+          <p id="subjectTopic">
+            Loading your latest quiz...
+          </p>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-icon">✎</div>
+          <span>Total Questions</span>
+          <strong id="totalQuestions">0</strong>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">✓</div>
+          <span>Correct Answers</span>
+          <strong id="correctCount">0</strong>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">!</div>
+          <span>Needs Review</span>
+          <strong id="mistakeCount">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISTAKE EXPLANATIONS -->
+    <section class="review-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-tag">DETAILED EXPLANATIONS</span>
+          <h2>Review Incorrect Answers</h2>
+          <p>Understand each mistake before trying again.</p>
+        </div>
+
+        <span class="review-count" id="reviewCount">
+          0 Mistakes
+        </span>
+      </div>
+
+      <div id="mistakesContainer" class="mistakes-container">
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyState" class="empty-state" hidden>
+        <div class="empty-icon">✓</div>
+        <h3>No Mistakes to Review!</h3>
+        <p id="emptyMessage">
+          You answered every question correctly.
+        </p>
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="bottom-actions">
+        <button id="learningBtn" class="primary-btn">
+          ← Back to Learning
+        </button>
+
+        <button id="dashboardBtn" class="secondary-btn">
+          Back to Dashboard
+        </button>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>© 2026 Blind Spot Insights</span>
+      <span>Learn · Analyse · Improve</span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/explanation.js"></script>
+
+</body>
+</html>
