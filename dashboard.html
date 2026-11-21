@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Blind Spot Insights</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">B</div>
+            <div class="brand-text">
+                <strong>Blind Spot</strong>
+                <small>INSIGHTS</small>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MAIN MENU</div>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="progress.html" class="nav-link">
+                <span>◴</span> Progress Report
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-message">
+                <span>✦</span>
+                <strong>Keep growing!</strong>
+                <p>Every lesson brings you one step closer to your goals.</p>
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+                <span>↪</span> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <span class="breadcrumb">Pages / Dashboard</span>
+                <h2>Dashboard</h2>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar" id="userAvatar">S</div>
+                <div class="user-details">
+                    <strong id="headerName">Student</strong>
+                    <small>Student Account</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- WELCOME BANNER -->
+        <section class="welcome-banner">
+            <div class="welcome-text">
+                <span class="welcome-tag">YOUR LEARNING JOURNEY</span>
+
+                <h1>Hello, <span id="welcomeName">Student</span>! 👋</h1>
+
+                <p>
+                    Ready to discover something new today?
+                    Pick a subject and continue your learning journey.
+                </p>
+
+                <button id="exploreBtn" class="banner-btn">
+                    Explore Subjects →
+                </button>
+            </div>
+
+            <div class="banner-art" aria-hidden="true">
+                <div class="art-circle circle-one"></div>
+                <div class="art-circle circle-two"></div>
+                <div class="art-book">
+                    <div></div>
+                    <div></div>
+                </div>
+                <span class="art-star star-one">✦</span>
+                <span class="art-star star-two">✧</span>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon purple">▤</div>
+                <div>
+                    <p>My Subjects</p>
+                    <h2 id="totalSubjects">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon peach">✓</div>
+                <div>
+                    <p>Quizzes Completed</p>
+                    <h2 id="totalQuizzes">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon mint">↗</div>
+                <div>
+                    <p>Quiz Accuracy</p>
+                    <h2 id="overallAccuracy">0%</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBJECTS -->
+        <section class="subjects-section" id="subjectsSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-tag">PERSONAL LEARNING</span>
+                    <h2>My Subjects</h2>
+                    <p>Choose a subject to explore topics and practise.</p>
+                </div>
+
+                <button id="addSubjectBtn" class="add-btn">
+                    + Add Subject
+                </button>
+            </div>
+
+            <div class="subjects-grid" id="subjectsContainer">
+                <!-- Subject cards inserted by JavaScript -->
+            </div>
+
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-icon">📚</div>
+                <h3>Your learning journey starts here!</h3>
+                <p>Add your first subject to begin learning.</p>
+                <button id="emptyAddBtn" class="primary-btn">
+                    + Choose a Subject
+                </button>
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            <span>© 2026 Blind Spot Insights</span>
+            <span>Learn · Analyse · Improve</span>
+        </footer>
+
+    </main>
+</div>
+
+<!-- ADD SUBJECT MODAL -->
+<div class="modal-overlay hidden" id="subjectModal">
+
+    <div class="modal-box" role="dialog"
+         aria-modal="true" aria-labelledby="modalTitle">
+
+        <div class="modal-header">
+            <div>
+                <span class="section-tag">EXPLORE LEARNING</span>
+                <h2 id="modalTitle">Add a Subject</h2>
+            </div>
+
+            <button id="closeModalBtn" class="close-btn"
+                    aria-label="Close dialog">×</button>
+        </div>
+
+        <p class="modal-description">
+            Select a subject you would like to learn.
+        </p>
+
+        <div id="availableSubjects" class="available-list">
+        </div>
+
+        <p id="modalMessage" role="status"></p>
+    </div>
+
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

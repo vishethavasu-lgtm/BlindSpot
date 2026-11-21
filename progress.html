@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Progress Report | Blind Spot Insights</title>
+  <link rel="stylesheet" href="css/progress.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">B</div>
+      <div class="brand-text">
+        <strong>Blind Spot</strong>
+        <small>INSIGHTS</small>
+      </div>
+    </div>
+
+    <div class="sidebar-label">MAIN MENU</div>
+
+    <nav class="nav-menu">
+      <a href="dashboard.html" class="nav-link">
+        <span>▦</span> Dashboard
+      </a>
+
+      <a href="progress.html" class="nav-link active"
+         aria-current="page">
+        <span>◴</span> Progress Report
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-message">
+        <span>✦</span>
+        <strong>Track your growth!</strong>
+        <p>See your strengths and discover what needs practice.</p>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">
+        ↪ Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <span class="breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          / Progress Report
+        </span>
+        <h2>Progress Report</h2>
+      </div>
+
+      <div class="user-profile">
+        <div class="avatar" id="userAvatar">S</div>
+        <div class="user-details">
+          <strong id="headerName">Student</strong>
+          <small>Student Account</small>
+        </div>
+      </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="progress-banner">
+      <div class="banner-content">
+        <span class="banner-tag">
+          LEARN · ANALYSE · IMPROVE
+        </span>
+
+        <h1>Your Learning Progress</h1>
+
+        <p>
+          Understand your performance, review completed quizzes,
+          and identify topics that need more attention.
+        </p>
+      </div>
+
+      <div class="banner-art" aria-hidden="true">
+        <div class="art-ring"></div>
+        <span class="art-chart">▥</span>
+        <span class="art-star">✦</span>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="overview-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-tag">PERFORMANCE OVERVIEW</span>
+          <h2>Learning Overview</h2>
+          <p>Your performance across completed quizzes.</p>
+        </div>
+      </div>
+
+      <div class="overview-grid">
+
+        <div class="accuracy-card">
+          <span class="card-label">OVERALL ACCURACY</span>
+
+          <div id="accuracyCircle" class="accuracy-circle">
+            <div class="accuracy-inner">
+              <strong id="overallAccuracy">0%</strong>
+              <span>Accuracy</span>
+            </div>
+          </div>
+
+          <p>
+            Based on all questions from your completed quizzes.
+          </p>
+        </div>
+
+        <div class="overview-stats">
+
+          <div class="stat-card">
+            <div class="stat-icon">✎</div>
+            <span>Quizzes Completed</span>
+            <strong id="totalQuizzes">0</strong>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">✓</div>
+            <span>Correct Answers</span>
+            <strong id="totalCorrect">0</strong>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">▤</div>
+            <span>Questions Attempted</span>
+            <strong id="totalQuestions">0</strong>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">!</div>
+            <span>Weak Topics</span>
+            <strong id="weakTopicsCount">0</strong>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBJECT PERFORMANCE -->
+    <section class="subject-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-tag">SUBJECT ANALYSIS</span>
+          <h2>Subject Performance</h2>
+          <p>See how you are performing in each subject.</p>
+        </div>
+      </div>
+
+      <div id="subjectPerformance" class="subject-grid"></div>
+    </section>
+
+    <!-- WEAK TOPICS -->
+    <section class="weak-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-tag">AREAS TO IMPROVE</span>
+          <h2>Weak Topics</h2>
+          <p>
+            Topics with below 50% accuracy after
+            at least 3 completed quizzes.
+          </p>
+        </div>
+      </div>
+
+      <div id="weakTopicsContainer" class="weak-topics-container">
+      </div>
+    </section>
+
+    <!-- QUIZ HISTORY -->
+    <section class="history-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-tag">PREVIOUS ATTEMPTS</span>
+          <h2>Quiz History</h2>
+          <p>Review your completed quizzes and scores.</p>
+        </div>
+      </div>
+
+      <div class="history-card">
+        <div class="table-scroll">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Topic</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Accuracy</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+
+        <div id="historyEmpty" class="empty-message" hidden>
+          No quizzes completed yet. Start learning and take a quiz
+          to see your progress.
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>© 2026 Blind Spot Insights</span>
+      <span>Learn · Analyse · Improve</span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/progress.js"></script>
+
+</body>
+</html>

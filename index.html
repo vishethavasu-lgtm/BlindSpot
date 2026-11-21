@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Spot Insights</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<main class="auth-container">
+
+    <!-- LEFT BRANDING PANEL -->
+    <section class="welcome-panel">
+
+        <div class="brand">
+            <div class="brand-icon">B</div>
+            <span>Blind Spot Insights</span>
+        </div>
+
+        <div class="welcome-content">
+            <span class="eyebrow">YOUR LEARNING SPACE</span>
+
+            <h1>Discover what<br>
+                you don't know.<br>
+                <span>Improve what you do.</span>
+            </h1>
+
+            <p>
+                A smarter way to learn, practise and understand
+                your learning progress.
+            </p>
+
+            <div class="learning-illustration">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="floating-card card-one">
+                    <span>✓</span>
+                    <div>
+                        <strong>Learn</strong>
+                        <small>Explore new topics</small>
+                    </div>
+                </div>
+
+                <div class="book">
+                    <div class="book-page"></div>
+                    <div class="book-page right"></div>
+                </div>
+
+                <div class="floating-card card-two">
+                    <span>↗️</span>
+                    <div>
+                        <strong>Improve</strong>
+                        <small>Track your growth</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            Learn <span>·</span> Analyse <span>·</span> Improve
+        </div>
+
+    </section>
+
+    <!-- RIGHT FORM PANEL -->
+    <section class="form-panel">
+
+        <div class="mobile-brand">
+            Blind Spot Insights
+        </div>
+
+        <div class="form-wrapper">
+
+            <div class="tabs">
+                <button type="button" id="loginTab"
+                    class="tab active" onclick="showLogin()">
+                    Login
+                </button>
+
+                <button type="button" id="registerTab"
+                    class="tab" onclick="showRegister()">
+                    Register
+                </button>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm"></form>
+        
+                <div class="form-heading">
+                    <span class="eyebrow">WELCOME BACK</span>
+                    <h2>Let's continue learning.</h2>
+                    <p>Enter your details to access your account.</p>
+                </div>
+
+                <label for="loginPhone">Phone Number</label>
+                <input type="tel" id="loginPhone"
+                    placeholder="Enter your 10-digit number"
+                    maxlength="10" inputmode="numeric" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword"
+                    placeholder="Enter your password" required>
+
+                <button type="submit" class="submit-btn">
+                    Login to your account <span>→</span>
+                </button>
+
+            </form>
+
+            <!-- REGISTER FORM -->
+            <form id="registerForm" class="hidden">
+
+                <div class="form-heading">
+                    <span class="eyebrow">GET STARTED</span>
+                    <h2>Create your account.</h2>
+                    <p>Start your learning journey with us.</p>
+                </div>
+
+                <label for="registerName">Full Name</label>
+                <input type="text" id="registerName"
+                    placeholder="Enter your full name" required>
+
+                <label for="registerPhone">Phone Number</label>
+                <input type="tel" id="registerPhone"
+                    placeholder="Enter your 10-digit number"
+                    maxlength="10" inputmode="numeric" required>
+
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword"
+                    placeholder="Create a password (min. 6 characters)"
+                    required>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword"
+                    placeholder="Re-enter your password" required>
+
+                <button type="submit" class="submit-btn">
+                    Create Account <span>→</span>
+                </button>
+
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <div class="form-bottom">
+                By continuing, you agree to use this platform
+                for educational purposes.
+            </div>
+
+        </div>
+
+        <footer>© 2026 Blind Spot Insights</footer>
+
+    </section>
+
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>
