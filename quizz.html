@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz & Result | Blind Spot Insights</title>
+  <link rel="stylesheet" href="./CSS/quizz.css">
+</head>
+<body>
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">B</div>
+        <div class="brand-text">
+          <strong>Blind Spot</strong>
+          <small>INSIGHTS</small>
+        </div>
+      </div>
+
+      <div class="sidebar-label">MAIN MENU</div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html" class="nav-link">
+          <span>▦</span> Dashboard
+        </a>
+        <a href="progress.html" class="nav-link">
+          <span>◴</span> Progress Report
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-message">
+          <span>✦</span>
+          <strong>Keep improving!</strong>
+          <p>Every question helps you discover what to learn next.</p>
+        </div>
+        <button id="logoutBtn" class="logout-btn">
+          ↪ Logout
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <span class="breadcrumb">
+            <a href="dashboard.html">Dashboard</a>
+            / <a href="learning.html">Subject Learning</a>
+            / Quiz
+          </span>
+          <h2>Quiz & Result</h2>
+        </div>
+        <div class="user-profile">
+          <div class="avatar" id="userAvatar">S</div>
+          <div class="user-details">
+            <strong id="headerName">Student</strong>
+            <small>Student Account</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="quiz-banner">
+        <div>
+          <span class="banner-tag">LEARN · ANALYSE · IMPROVE</span>
+          <h1 id="subjectTitle">Practice Quiz</h1>
+          <p id="topicSubtitle">Test your understanding of this topic.</p>
+        </div>
+        <div class="banner-art" aria-hidden="true">✎</div>
+      </section>
+
+      <!-- QUIZ SCREEN -->
+      <section id="quizScreen" class="quiz-section">
+        <div class="quiz-meta">
+          <div>
+            <span class="section-tag">KNOWLEDGE CHECK</span>
+            <h2 id="topicTitle">Topic Quiz</h2>
+            <p>Choose the correct answer for each question.</p>
+          </div>
+          <div class="question-badge" id="questionCounter">
+            Question 1 of 5
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-card-top">
+            <div class="progress-details">
+              <span>Quiz Progress</span>
+              <strong id="progressPercent">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="question-top">
+            <span class="question-label" id="questionLabel">
+              QUESTION 01
+            </span>
+            <div id="timer" class="timer" aria-live="off">
+              <span>◷</span>
+              <strong id="timeLeft">30</strong>s
+            </div>
+          </div>
+
+          <h3 id="questionText" class="question-text">
+            Loading question...
+          </h3>
+
+          <div id="optionsContainer" class="options-container"></div>
+
+          <p id="selectionHint" class="selection-hint" aria-live="polite">
+            Select an answer or skip this question.
+          </p>
+
+          <div class="quiz-actions">
+            <button id="skipBtn" class="secondary-btn">Skip Question</button>
+            <button id="nextBtn" class="primary-btn" disabled>
+              Next Question →
+            </button>
+          </div>
+        </div>
+
+        <p class="quiz-note">
+          ✦ You have 30 seconds for each question. Skipped and
+          timed-out questions are counted as incorrect.
+        </p>
+      </section>
+
+      <!-- RESULT SCREEN -->
+      <section id="resultScreen" class="result-section" hidden>
+        <div class="result-card">
+          <div class="result-icon">✦</div>
+          <span class="section-tag">QUIZ COMPLETED</span>
+          <h2>Your Quiz Result</h2>
+          <p id="resultSubtitle">
+            Here is how you performed.
+          </p>
+
+          <div class="score-circle" id="scoreCircle">
+            <div class="score-inner">
+              <strong id="scorePercent">0%</strong>
+              <small>Accuracy</small>
+            </div>
+          </div>
+
+          <div class="result-stats">
+            <div class="result-stat">
+              <strong id="correctStat">0</strong>
+              <span>Correct</span>
+            </div>
+            <div class="result-stat">
+              <strong id="wrongStat">0</strong>
+              <span>Wrong</span>
+            </div>
+            <div class="result-stat">
+              <strong id="skippedStat">0</strong>
+              <span>Skipped</span>
+            </div>
+            <div class="result-stat">
+              <strong id="timeoutStat">0</strong>
+              <span>Timed Out</span>
+            </div>
+          </div>
+
+          <p id="resultMessage" class="result-message"></p>
+
+          <div class="result-actions">
+            <button id="explanationBtn" class="primary-btn">
+              View Explanations →
+            </button>
+            <button id="learningBtn" class="secondary-btn">
+              Back to Learning
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>© 2026 Blind Spot Insights</span>
+        <span>Learn · Analyse · Improve</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="./JS/quizz.js"></script>
+</body>
+</html>
