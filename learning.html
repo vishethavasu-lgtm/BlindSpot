@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Learning | Blind Spot Insights</title>
+  <link rel="stylesheet" href="css/learning.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="dashboard.html" class="brand">
+        <span class="brand-icon">B</span>
+        <span>Blind Spot<br><small>Insights</small></span>
+      </a>
+
+      <div class="sidebar-label">LEARNING PLATFORM</div>
+
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-link">
+          <span>▦</span> Dashboard
+        </a>
+        <a href="learning.html" class="nav-link active">
+          <span>◈</span> Subject Learning
+        </a>
+        <a href="progress.html" class="nav-link">
+          <span>▤</span> Progress Report
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-user">
+          <span id="sidebarAvatar" class="avatar">S</span>
+          <div>
+            <strong id="sidebarName">Student</strong>
+            <small>Student Account</small>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn" type="button">
+          Log Out ↗
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          <span>›</span>
+          <span id="breadcrumbCurrent">Subject Learning</span>
+        </div>
+        <div class="top-user">
+          <span id="topbarName">Student</span>
+          <span id="topbarAvatar" class="avatar">S</span>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="page-intro">
+          <div class="eyebrow">LEARN • PRACTICE • IMPROVE</div>
+          <h1 id="pageTitle">Subject Learning</h1>
+          <p id="pageSubtitle">
+            Build your knowledge, one topic at a time.
+          </p>
+        </div>
+
+        <div id="messageBox" class="message" hidden></div>
+
+        <!-- SUBJECT SELECTION -->
+        <section id="subjectScreen" class="screen" hidden>
+          <div class="section-heading">
+            <div>
+              <h2>Choose Your Subject</h2>
+              <p>Explore your enrolled subjects and track your learning.</p>
+            </div>
+          </div>
+          <div id="subjectGrid" class="subject-grid"></div>
+        </section>
+
+        <!-- TOPIC LIST -->
+        <section id="topicScreen" class="screen" hidden>
+          <button id="backToSubjects" class="back-link" type="button">
+            ← All Subjects
+          </button>
+
+          <div class="subject-banner">
+            <span id="subjectKicker" class="banner-kicker">SUBJECT</span>
+            <h2 id="subjectHeading">Study Notes</h2>
+            <p id="subjectDescription"></p>
+          </div>
+
+          <div class="progress-card">
+            <div class="progress-header">
+              <div>
+                <h3>Your Learning Progress</h3>
+                <p id="progressText">0/10 Topics Completed</p>
+              </div>
+              <strong id="progressPercentage">0%</strong>
+            </div>
+            <div
+              id="progressTrack"
+              class="progress-track"
+              role="progressbar"
+              aria-label="Learning progress"
+              aria-valuemin="0"
+              aria-valuemax="10"
+              aria-valuenow="0"
+            >
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <h2>Study Notes</h2>
+              <p>Open each topic, read the note and mark it complete.</p>
+            </div>
+            <span class="count-pill">10 Topics</span>
+          </div>
+
+          <div id="topicList" class="topic-list"></div>
+
+          <div class="quiz-card">
+            <div id="quizIcon" class="quiz-icon">🔒</div>
+            <div class="quiz-details">
+              <h3 id="quizHeading">Quiz Locked</h3>
+              <p id="quizMessage">
+                Complete all 10 study notes to unlock your quiz.
+              </p>
+            </div>
+            <button
+              id="startQuizBtn"
+              class="primary-btn"
+              type="button"
+              disabled
+            >
+              Complete Notes First
+            </button>
+          </div>
+        </section>
+
+        <!-- READING SCREEN -->
+        <section id="readingScreen" class="screen" hidden>
+          <button id="backToTopics" class="back-link" type="button">
+            ← Back to Topics
+          </button>
+
+          <article class="reading-card">
+            <div class="reading-header">
+              <span id="readingNumber" class="topic-badge">TOPIC 01</span>
+              <span id="readingStatus" class="reading-status">
+                Not Completed
+              </span>
+            </div>
+
+            <h2 id="readingTitle">Topic Title</h2>
+
+            <div class="note-block">
+              <div class="note-label">QUESTION</div>
+              <h3 id="readingQuestion"></h3>
+            </div>
+
+            <div class="note-block explanation-block">
+              <div class="note-label">EXPLANATION</div>
+              <p id="readingExplanation"></p>
+            </div>
+
+            <div id="examplesSection" class="note-block examples-block">
+              <div class="note-label">EXAMPLES / KEY POINTS</div>
+              <p id="readingExamples"></p>
+            </div>
+
+            <div class="reading-actions">
+              <button
+                id="completeBtn"
+                class="primary-btn"
+                type="button"
+              >
+                ✓ Mark as Completed
+              </button>
+              <button
+                id="nextTopicBtn"
+                class="secondary-btn"
+                type="button"
+              >
+                Next Topic →
+              </button>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/learning.js"></script>
+</body>
+</html>
