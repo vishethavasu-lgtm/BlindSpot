@@ -1,4 +1,9 @@
+// BLIND SPOT INSIGHTS
+// MODULE 1 - STORAGE MANAGEMENT
+
 const Storage = {
+
+    // Get all registered users
     getUsers() {
         try {
             const users = localStorage.getItem("bsi_users");
@@ -9,14 +14,24 @@ const Storage = {
         }
     },
 
+    // Save all registered users
     saveUsers(users) {
         try {
-            localStorage.setItem("bsi_users", JSON.stringify(users));
+            if (!Array.isArray(users)) {
+                console.error("Invalid users data");
+                return;
+            }
+
+            localStorage.setItem(
+                "bsi_users",
+                JSON.stringify(users)
+            );
         } catch (error) {
             console.error("Error saving users:", error);
         }
     },
 
+    // Get currently logged-in user
     getCurrentUser() {
         try {
             const user = localStorage.getItem("bsi_currentUser");
@@ -27,8 +42,14 @@ const Storage = {
         }
     },
 
+    // Set currently logged-in user
     setCurrentUser(user) {
         try {
+            if (!user || typeof user !== "object") {
+                console.error("Invalid current user data");
+                return;
+            }
+
             localStorage.setItem(
                 "bsi_currentUser",
                 JSON.stringify(user)
@@ -38,12 +59,22 @@ const Storage = {
         }
     },
 
+    // Logout current user
     logout() {
-        localStorage.removeItem("bsi_currentUser");
+        try {
+            localStorage.removeItem("bsi_currentUser");
+        } catch (error) {
+            console.error("Error during logout:", error);
+        }
     },
 
+    // Clear all stored user data
     clearAll() {
-        localStorage.removeItem("bsi_users");
-        localStorage.removeItem("bsi_currentUser");
+        try {
+            localStorage.removeItem("bsi_users");
+            localStorage.removeItem("bsi_currentUser");
+        } catch (error) {
+            console.error("Error clearing storage:", error);
+        }
     }
 };
